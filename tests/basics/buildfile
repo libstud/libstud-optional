@@ -1,0 +1,3 @@
+import libs = libstud-optional%lib{stud-optional}
+
+exe{driver}: {hxx ixx txx cxx}{**} $libs

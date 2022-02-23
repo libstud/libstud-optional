@@ -1,0 +1,6 @@
+$out_root/
+{
+  include libstud/optional/
+}
+
+export $out_root/libstud/optional/$import.target

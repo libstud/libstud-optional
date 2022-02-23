@@ -1,0 +1,28 @@
+lib{stud-optional}: {hxx ixx txx}{** -version} hxx{version} ../hxx{optional}
+
+# Include the generated version header into the distribution (so that we don't
+# pick up an installed one) and don't remove it when cleaning in src (so that
+# clean results in a state identical to distributed).
+#
+hxx{version}: in{version} $src_root/manifest
+{
+  dist  = true
+  clean = ($src_root != $out_root)
+}
+
+# Build options.
+#
+cxx.poptions =+ "-I$out_root" "-I$src_root"
+
+# Export options.
+#
+lib{stud-optional}: cxx.export.poptions = "-I$out_root" "-I$src_root"
+
+# Install into the libstud/optional/ subdirectory of, say, /usr/include/
+# recreating subdirectories.
+#
+../{hxx ixx txx}{*}:
+{
+  install         = include/libstud/
+  install.subdirs = true
+}
