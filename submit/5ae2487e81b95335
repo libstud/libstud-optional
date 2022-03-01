@@ -1,0 +1,6 @@
+: 1
+name: libstud-optional
+version: 1.0.0
+project: libstud
+summary: std::optional library for C++14
+license: MIT; MIT License.
